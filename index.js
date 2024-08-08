@@ -88,7 +88,7 @@ start.onclick = function(){
             if(count >= 0){
                 clearInterval(interval)
             }
-        },500)
+        },1000)
     }
      else if(count >= 0){
         let interval = setInterval(() => {
@@ -97,7 +97,7 @@ start.onclick = function(){
             if(count <= 0){
                 clearInterval(interval)
             }
-        },500)
+        },1000)
     }
     else {
         
