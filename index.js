@@ -9,13 +9,13 @@ document.getElementById("sub").onclick = function(){
     k = document.getElementById("kkk").value;
     bmi = k / h**2;
 
-   document.getElementById("bmi").textContent = `your bmi is ${bmi}`;
+   document.getElementById("bmi").textContent = `your bmi is ${bmi.toFixed(2)}`;
 
 
 
 
     if ( h === "" && k === "" ){
-        p.textContent = "please input height";
+        p.textContent = "please input Data";
     }
     else if ( h === "" ){
         p.textContent = "please input height";
@@ -55,7 +55,7 @@ let Circumference;
 document.getElementById("subm").onclick = function(){
     r = document.getElementById("radius").value;
     Circumference = 2 * Math.PI * r;
-    document.getElementById("rad").textContent = `The Circumference is ${Circumference}`;
+    document.getElementById("rad").textContent = `The Circumference is ${Circumference.toFixed(2)}`;
 }
 
 ////////////////////////////////////////////////////////
@@ -68,8 +68,7 @@ document.getElementById("subm").onclick = function(){
 const resate = document.getElementById("resate")
 const increase = document.getElementById("increase")
 const decrease = document.getElementById("decrease")
-
-
+const start = document.getElementById("Start")
 
 
 let count = 0;
@@ -79,6 +78,30 @@ document.getElementById("oo").textContent = `${count}`
 resate.onclick = function(){
     count = 0;
     document.getElementById("oo").textContent = `${count}`
+}
+
+start.onclick = function(){
+    if (count <= 0) {
+        let interval = setInterval(() => {
+            count++;  
+            document.getElementById("oo").textContent = `${count}`
+            if(count >= 0){
+                clearInterval(interval)
+            }
+        },500)
+    }
+     else if(count >= 0){
+        let interval = setInterval(() => {
+            count--;  
+            document.getElementById("oo").textContent = `${count}`
+            if(count <= 0){
+                clearInterval(interval)
+            }
+        },500)
+    }
+    else {
+        
+    }
 }
 
 increase.onclick = function(){
@@ -180,9 +203,9 @@ document.getElementById("subtax").onclick = function(){
 
     plus = i1 + i2 + i3 + i4;
     
-    value =  (i1 + i2 + i3 + i4) + taxi * plus / 100;
+    value =  plus + taxi * plus / 100;
 
-    document.getElementById("tata").textContent = `${value}`
+    document.getElementById("tata").textContent = `${value.toFixed(2)}`
 
 
 }
