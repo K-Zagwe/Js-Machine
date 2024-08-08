@@ -202,14 +202,19 @@ function calculateSum() {
 }
 
  
+////////////////////////////////////////////////////////////
 
 
+let mile
+let km
+let submile = document.getElementById("submile");
 
 
-
-
-
-
+submile.onclick = function(){
+    mile = document.getElementById("valuemile").value
+    b = mile * 1.6
+    document.getElementById("km").textContent = `${b}km`
+}
 
 
 

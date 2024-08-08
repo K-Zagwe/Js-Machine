@@ -140,7 +140,13 @@ h1{
 }
 
 
-
+.mtk{
+    color: white;
+    width: 100%;
+    background-color: #1a2846;
+    justify-content: center;
+    text-align: center;
+}
 
 
 
