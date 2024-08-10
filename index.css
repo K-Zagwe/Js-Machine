@@ -170,6 +170,54 @@ h1 {
 }
 
 
+.container1 {
+    text-align: center;
+    padding: 20px;
+    background-color: #9175d3;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.converter {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.convert {
+    margin: 10px;
+}
+
+input {
+    margin: 5px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+	width: 50%;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
 
 
 

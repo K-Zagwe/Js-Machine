@@ -218,3 +218,64 @@ function calculatefact() {
 		return acc * element;
 	}
 }
+
+
+
+
+
+
+
+function convertMilesToKm() {
+    const miles = parseFloat(document.getElementById('miles').value);
+    if (isNaN(miles)) {
+        document.getElementById('milesToKmResult').innerText = 'Please enter a valid number.';
+        return;
+    }
+    const km = miles * 1.60934;
+    document.getElementById('milesToKmResult').innerText = `${miles} miles is equal to ${km.toFixed(2)} kilometers.`;
+}
+
+function convertKmToMiles() {
+    const km = parseFloat(document.getElementById('kilometers').value);
+    if (isNaN(km)) {
+        document.getElementById('kmToMilesResult').innerText = 'Please enter a valid number.';
+        return;
+    }
+    const miles = km / 1.60934;
+    document.getElementById('kmToMilesResult').innerText = `${km} kilometers is equal to ${miles.toFixed(2)} miles.`;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

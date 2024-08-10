@@ -155,23 +155,29 @@
             <p id="result">Result: </p>
         </div>
     </div>
-
-    <div class="mtk">
-        <h1>Mile to Km</h1>
-        <br>
-        <div class="miled">
-            <input id="valuemile" type="number" placeholder="Enter distance in mile">
-            <p id="km">----</p>
-            <br>
-            <button id="submile">SUBMIT</button>
-        </div>
-    </div>
     <div class="container">
         <h1>Factoryl Calc</h1>
         <div class="calculator">
             <input type="number" id="numberfact" placeholder="Enter first number">
             <button onclick="calculatefact()">Calculate</button>
             <p id="resultfact">Result: </p>
+        </div>
+    </div>
+    <div class="container1">
+        <h1>Miles/Kilometers Converter</h1>
+        <div class="converter">
+            <div class="convert">
+                <label for="miles">Miles:</label>
+                <input type="number" id="miles" placeholder="Enter miles">
+                <button onclick="convertMilesToKm()">Convert to Kilometers</button>
+                <p id="milesToKmResult"></p>
+            </div>
+            <div class="convert">
+                <label for="kilometers">Kilometers:</label>
+                <input type="number" id="kilometers" placeholder="Enter kilometers">
+                <button onclick="convertKmToMiles()">Convert to Miles</button>
+                <p id="kmToMilesResult"></p>
+            </div>
         </div>
     </div>
     <script src="index.js"></script> 
