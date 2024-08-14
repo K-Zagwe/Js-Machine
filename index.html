@@ -168,7 +168,7 @@
     <div class="container">
         <h1>Factoryl Calc</h1>
         <div class="calculator">
-            <input type="number" id="numberfact" placeholder="Enter first number">
+            <input type="number" id="numberfact" placeholder="Enter first number" min='0' max="100">
             <button onclick="calculatefact()">Calculate</button>
             <p id="resultfact">Result: </p>
         </div>
@@ -195,7 +195,7 @@
         <label for="marks">Enter Marks (0-100):</label>
         <input type="number" id="marks" placeholder="Enter your marks" min="0" max="100">
         <button onclick="calculateGrade()">Calculate Grade</button>
-        <p id="result"></p>
+        <p id="resultGrade">Your Grade is: </p>
     </div>
     <script src="index.js"></script> 
 </body>

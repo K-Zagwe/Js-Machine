@@ -261,7 +261,8 @@ function calculateGrade() {
         grade = 'F';
     }
 
-    document.getElementById('result').innerText = `Your grade is: ${grade}`;
+    document.getElementById('resultGrade').textContent = `Your Grade is: ${grade}`;
+	
 }
 
 
