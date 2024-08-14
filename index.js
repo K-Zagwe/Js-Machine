@@ -3,11 +3,11 @@
 let h;
 let k;
 let bmi;
-let p = document.getElementById("bmita");
-document.getElementById("sub").onclick = function () {
-	h = document.getElementById("hhh").value;
-	k = document.getElementById("kkk").value;
-	bmi = k / h ** 2;
+let p = document.getElementById("bmita")
+document.getElementById("sub").onclick = function(){
+    h = document.getElementById("hhh").value;
+    k = document.getElementById("kkk").value;
+    bmi = k / h**2;
 
 	document.getElementById("bmi").textContent = `your bmi is ${bmi.toFixed(2)}`;
 
@@ -71,7 +71,7 @@ start.onclick = function () {
 			if (count >= 0) {
 				clearInterval(interval);
 			}
-		}, 500);
+		}, 1000);
 	} else if (count >= 0) {
 		let interval = setInterval(() => {
 			count--;
@@ -79,7 +79,7 @@ start.onclick = function () {
 			if (count <= 0) {
 				clearInterval(interval);
 			}
-		}, 500);
+		}, 1000);
 	} else {
 	}
 };
@@ -118,9 +118,7 @@ roll.onclick = function () {
 ////////////////////////////////////////////////////////
 
 const subs = document.getElementById("subscribe");
-const visa = document.getElementById("visa");
-const mc = document.getElementById("mc");
-const pay = document.getElementById("paypal");
+const paymentM = document.querySelectorAll("#radio");
 const subm = document.getElementById("suuu");
 const text = document.getElementById("text");
 const textp = document.getElementById("textp");
@@ -130,16 +128,23 @@ subm.onclick = function () {
 		text.textContent = "you are subscribed";
 	} else {
 		text.textContent = "you are not subscribed";
-	}
-
-	if (visa.checked) {
-		textp.textContent = "you are paying with visa";
-	} else if (mc.checked) {
-		textp.textContent = "you are paying with master card";
-	} else if (pay.checked) {
-		textp.textContent = "you are paying with paypal";
-	} else {
-		textp.textContent = "select a payment type or you may be broke???";
+    }
+    paymentM.forEach((Element) => {
+        let checkerarray = [Element]
+        if (!Element.checked) {
+            let nopayarray = [Element];
+            if (nopayarray.length === checkerarray.length) {
+                textp.textContent = 'please select one of the payment method'
+            }
+        }
+    });
+    pay()
+	function pay() {
+		paymentM.forEach((Element) => {
+            if (Element.checked) {
+				textp.textContent = 'you are paying with ' + Element.value;
+            }
+		});
 	}
 };
 
@@ -175,7 +180,7 @@ document.getElementById("subtax").onclick = function () {
 };
 ////////////////////////////////////////////////////////
 /////////sum///////////
-// script.js
+script.js
 function calculateSum() {
 	const number1 = parseFloat(document.getElementById("number1").value);
 	const number2 = parseFloat(document.getElementById("number2").value);
