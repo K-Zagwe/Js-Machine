@@ -180,7 +180,6 @@ document.getElementById("subtax").onclick = function () {
 };
 ////////////////////////////////////////////////////////
 /////////sum///////////
-script.js
 function calculateSum() {
 	const number1 = parseFloat(document.getElementById("number1").value);
 	const number2 = parseFloat(document.getElementById("number2").value);
@@ -192,18 +191,6 @@ function calculateSum() {
 		document.getElementById("result").innerText = "Result: " + sum;
 	}
 }
-
-////////////////////////////////////////////////////////////
-
-let mile;
-let km;
-let submile = document.getElementById("submile");
-
-submile.onclick = function () {
-	mile = document.getElementById("valuemile").value;
-	b = mile * 1.6;
-	document.getElementById("km").textContent = `${b.toFixed(2)}km`;
-};
 
 ////////////////////////////////////////////////////////
 /////////sum///////////
