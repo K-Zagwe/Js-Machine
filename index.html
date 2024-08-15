@@ -158,11 +158,25 @@
     <div class="container" style="background-color: rgb(158, 5, 38); color: white;">
         <h1>Simple Calculator</h1>
         <div class="calculator">
-            <input style="width: 50%; " type="number" id="number1" placeholder="Enter first number">
-            <input style="width: 50%; "  type="number" id="number2" placeholder="Enter second number">
-            <br>
-            <button onclick="calculateSum()">Calculate</button>
-            <p id="result">Result: </p>
+            <input style="width: 45%;" id="pressholder" readonly>
+            <div class="buttons">
+                <button onclick="addtoinput('0')">0</button>
+                <button onclick="addtoinput('1')">1</button>
+                <button onclick="addtoinput('2')">2</button>
+                <button onclick="addtoinput('+')">+</button>
+                <button onclick="addtoinput('3')">3</button>
+                <button onclick="addtoinput('4')">4</button>
+                <button onclick="addtoinput('5')">5</button>
+                <button onclick="addtoinput('-')">-</button>
+                <button onclick="addtoinput('6')">6</button>
+                <button onclick="addtoinput('7')">7</button>
+                <button onclick="addtoinput('8')">8</button>
+                <button onclick="addtoinput('*')">*</button>
+                <button onclick="addtoinput('9')">9</button>
+                <button onclick="addtoinput('/')">/</button>
+                <button id='clear'>C</button>
+                <button onclick="calc()">=</button>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -174,21 +188,30 @@
         </div>
     </div>
     <div class="container1">
-        <h1>Miles/Kilometers Converter</h1>
+        <h1>Length Converter</h1>
         <div class="converter">
-            <div class="convert">
-                <label for="miles">Miles:</label>
-                <input type="number" id="miles" placeholder="Enter miles">
-                <button onclick="convertMilesToKm()">Convert to Kilometers</button>
-                <p id="milesToKmResult"></p>
+            <div class="convertcontainer">
+                <select name="measurements" id="measurementsfrom">
+                    <option value="Kilometers">Kilometers</option>
+                    <option value="Miles">Miles</option>
+                    <option value="inch">inch</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                </select>
+                <div><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000"><path d="M280-160 80-360l200-200 56 57-103 103h287v80H233l103 103-56 57Zm400-240-56-57 103-103H440v-80h287L624-743l56-57 200 200-200 200Z"/></svg>
+                  </div>
+                  <select name="measurements" id="measurementsto">
+                    <option value="Kilometers">Kilometers</option>
+                    <option value="Miles">Miles</option>
+                    <option value="inch">inch</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                </select>
             </div>
-            <div class="convert">
-                <label for="kilometers">Kilometers:</label>
-                <input type="number" id="kilometers" placeholder="Enter kilometers">
-                <button onclick="convertKmToMiles()">Convert to Miles</button>
-                <p id="kmToMilesResult"></p>
-            </div>
+            <input type="number" placeholder="Type here" id="Numberinput">
+            <input type="number" readonly id="Returnvalue">
         </div>
+        <button onclick="Convert()">Convert</button>
     </div>
     <div class="container">
         <h1>Grade Calculator</h1>

@@ -3,11 +3,11 @@
 let h;
 let k;
 let bmi;
-let p = document.getElementById("bmita")
-document.getElementById("sub").onclick = function(){
-    h = document.getElementById("hhh").value;
-    k = document.getElementById("kkk").value;
-    bmi = k / h**2;
+let p = document.getElementById("bmita");
+document.getElementById("sub").onclick = function () {
+	h = document.getElementById("hhh").value;
+	k = document.getElementById("kkk").value;
+	bmi = k / h ** 2;
 
 	document.getElementById("bmi").textContent = `your bmi is ${bmi.toFixed(2)}`;
 
@@ -128,22 +128,22 @@ subm.onclick = function () {
 		text.textContent = "you are subscribed";
 	} else {
 		text.textContent = "you are not subscribed";
-    }
-    paymentM.forEach((Element) => {
-        let checkerarray = [Element]
-        if (!Element.checked) {
-            let nopayarray = [Element];
-            if (nopayarray.length === checkerarray.length) {
-                textp.textContent = 'please select one of the payment method'
-            }
-        }
-    });
-    pay()
+	}
+	paymentM.forEach((Element) => {
+		let checkerarray = [Element];
+		if (!Element.checked) {
+			let nopayarray = [Element];
+			if (nopayarray.length === checkerarray.length) {
+				textp.textContent = "please select one of the payment method";
+			}
+		}
+	});
+	pay();
 	function pay() {
 		paymentM.forEach((Element) => {
-            if (Element.checked) {
-				textp.textContent = 'you are paying with ' + Element.value;
-            }
+			if (Element.checked) {
+				textp.textContent = "you are paying with " + Element.value;
+			}
 		});
 	}
 };
@@ -180,18 +180,22 @@ document.getElementById("subtax").onclick = function () {
 };
 ////////////////////////////////////////////////////////
 /////////sum///////////
-function calculateSum() {
-	const number1 = parseFloat(document.getElementById("number1").value);
-	const number2 = parseFloat(document.getElementById("number2").value);
-
-	if (isNaN(number1) || isNaN(number2)) {
-		document.getElementById("result").innerText = "Please enter valid numbers";
-	} else {
-		const sum = number1 + number2;
-		document.getElementById("result").innerText = "Result: " + sum;
-	}
+let pressholder = document.getElementById("pressholder");
+function addtoinput(button) {
+	pressholder.value += button;
 }
 
+function calc() {
+	try {
+		let calculater = eval(pressholder.value);
+		pressholder.value = calculater;
+	} catch (error) {
+		pressholder.value = "Math error";
+	}
+}
+document.getElementById("clear").onclick = function () {
+	pressholder.value = "";
+};
 ////////////////////////////////////////////////////////
 /////////sum///////////
 // script.js
@@ -204,93 +208,86 @@ function calculatefact() {
 	}
 
 	let factoryal = array.reduce(multiply);
-    document.getElementById('resultfact').textContent = 'Result: ' + factoryal;
+	document.getElementById("resultfact").textContent = "Result: " + factoryal;
 
 	function multiply(acc, element) {
 		return acc * element;
 	}
 }
 
-
-
-
-
-
-
-function convertMilesToKm() {
-    const miles = parseFloat(document.getElementById('miles').value);
-    if (isNaN(miles)) {
-        document.getElementById('milesToKmResult').innerText = 'Please enter a valid number.';
-        return;
-    }
-    const km = miles * 1.60934;
-    document.getElementById('milesToKmResult').innerText = `${miles} miles is equal to ${km.toFixed(2)} kilometers.`;
+function Convert() {
+	const measurementsfrom = document.getElementById("measurementsfrom").value;
+	const measurementsto = document.getElementById("measurementsto").value;
+	let Numberinput = parseFloat(document.getElementById("Numberinput").value);
+	let Returnvalue = document.getElementById("Returnvalue");
+	if (measurementsfrom === measurementsto) {
+		Returnvalue.value = Numberinput;
+	} else if (measurementsfrom == "Kilometers" && measurementsto == "Miles") {
+		Returnvalue.value = Numberinput * 1.60934;
+	} else if (measurementsfrom == "Miles" && measurementsto == "Kilometers") {
+		Returnvalue.value = Numberinput / 1.60934;
+	} else if (measurementsfrom == "Kilometers" && measurementsto == "inch") {
+		Returnvalue.value = Numberinput * 39370.1;
+	} else if (measurementsfrom == "inch" && measurementsto == "Kilometers") {
+		Returnvalue.value = Numberinput / 39370.1;
+	} else if (measurementsfrom == "cm" && measurementsto == "Kilometers") {
+		Returnvalue.value = Numberinput / 100000;
+	} else if (measurementsfrom == "Kilometers" && measurementsto == "cm") {
+		Returnvalue.value = Numberinput * 100000;
+	}else if (measurementsfrom == "mm" && measurementsto == "Kilometers") {
+		Returnvalue.value = Numberinput / 1000000;
+	}else if (measurementsfrom == "Kilometers" && measurementsto == "mm") {
+		Returnvalue.value = Numberinput * 1000000;
+	} else if (measurementsfrom == "Miles" && measurementsto == "inch") {
+		Returnvalue.value = Numberinput * 63360;
+	} else if (measurementsfrom == "inch" && measurementsto == "Miles") {
+		Returnvalue.value = Numberinput / 63360;
+	}else if (measurementsfrom == "Miles" && measurementsto == "cm") {
+		Returnvalue.value = Numberinput * 160934;
+	}else if (measurementsfrom == "cm" && measurementsto == "Miles") {
+		Returnvalue.value = Numberinput / 160934;
+	}else if (measurementsfrom == "Miles" && measurementsto == "mm") {
+		Returnvalue.value = Numberinput * 1.609e+6;
+	}else if (measurementsfrom == "mm" && measurementsto == "Miles") {
+		Returnvalue.value = Numberinput / 1.609e+6;
+	}else if (measurementsfrom == "inch" && measurementsto == "cm") {
+		Returnvalue.value = Numberinput * 2.54;
+	}else if (measurementsfrom == "cm" && measurementsto == "inch") {
+		Returnvalue.value = Numberinput / 2.54;
+	}else if (measurementsfrom == "inch" && measurementsto == "mm") {
+		Returnvalue.value = Numberinput * 25.4;
+	}else if (measurementsfrom == "mm" && measurementsto == "inch") {
+		Returnvalue.value = Numberinput / 25.4;
+	}else if (measurementsfrom == "cm" && measurementsto == "mm") {
+		Returnvalue.value = Numberinput * 10;
+	}else if (measurementsfrom == "mm" && measurementsto == "cm") {
+		Returnvalue.value = Numberinput / 10;
+	}
 }
 
-function convertKmToMiles() {
-    const km = parseFloat(document.getElementById('kilometers').value);
-    if (isNaN(km)) {
-        document.getElementById('kmToMilesResult').innerText = 'Please enter a valid number.';
-        return;
-    }
-    const miles = km / 1.60934;
-    document.getElementById('kmToMilesResult').innerText = `${km} kilometers is equal to ${miles.toFixed(2)} miles.`;
-}
-
-
-
-
+//-------------------------------------------------------------------------------------------
 
 function calculateGrade() {
-    const marks = document.getElementById('marks').value;
-    let grade;
+	const marks = document.getElementById("marks").value;
+	let grade;
 
-    if (marks >= 90) {
-        grade = 'A+';
-    } else if (marks >= 80) {
-        grade = 'A';
-    } else if (marks >= 70) {
-        grade = 'B';
-    } else if (marks >= 60) {
-        grade = 'C';
-    } else if (marks >= 50) {
-        grade = 'D';
-    } else if (marks >= 40) {
-        grade = 'E';
-    } else {
-        grade = 'F';
-    }
+	if (marks >= 90) {
+		grade = "A+";
+	} else if (marks >= 80) {
+		grade = "A";
+	} else if (marks >= 70) {
+		grade = "B";
+	} else if (marks >= 60) {
+		grade = "C";
+	} else if (marks >= 50) {
+		grade = "D";
+	} else if (marks >= 40) {
+		grade = "E";
+	} else {
+		grade = "F";
+	}
 
-    document.getElementById('resultGrade').textContent = `Your Grade is: ${grade}`;
-	
+	document.getElementById(
+		"resultGrade"
+	).textContent = `Your Grade is: ${grade}`;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
