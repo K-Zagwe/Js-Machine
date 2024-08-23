@@ -1,13 +1,12 @@
 body {
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	margin: 0;
+    align-items: center;
 	background-color: #081f49;
 }
 * {
 	margin: 0;
 	padding: 0;
-}
-* {
 	box-sizing: border-box;
 }
 
@@ -192,13 +191,6 @@ h1 {
     margin: 10px;
 }
 
-input {
-    margin: 5px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-	width: 50%;
-}
 
 button {
     padding: 8px 16px;
@@ -219,24 +211,13 @@ p {
     font-weight: bold;
 }
 
-
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-}
-
 .container {
     background-color: #fff;
+    width: 100%;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 300px;
 }
 
 h1 {
@@ -269,4 +250,32 @@ button:hover {
     font-size: 1.2em;
     color: #333;
 }
+.container12 {
+    width: 100%;
+    text-align: center;
+    background-color: #82c0e9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#cf, #fc{
+    width: 1%;
+}
+.temperature-input {
+    margin-bottom: 20px;
+}
 
+.iii {
+    width: 50%;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.radio-group {
+    margin: 10px 0;
+}
+
+.result-display {
+    font-size: 24px;
+    margin-top: 20px;
+}  

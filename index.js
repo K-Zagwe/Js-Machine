@@ -202,23 +202,28 @@ submile.onclick = function () {
 
 ////////////////////////////////////////////////////////
 /////////sum///////////
-// script.js
-function calculatefact() {
-	const numberfact = parseFloat(document.getElementById("numberfact").value);
-	let array = [];
-	for (i = 1; i <= numberfact; i++) {
-		let num = i;
-		array.push(num);
-	}
+// construction
 
-	let factoryal = array.reduce(multiply);
-    document.getElementById('resultfact').textContent = 'Result: ' + factoryal;
 
-	function multiply(acc, element) {
-		return acc * element;
-	}
-}
+// document.getElementById('calculateButton').addEventListener('click', function() {
+//     const number = parseInt(document.getElementById('numberInput').value);
+//     const resultElement = document.getElementById('result333');
 
+//     if (isNaN(number) || number < 0) {
+//         console.log("Please enter a non-negative integer.")
+//         return;
+//     }
+
+//     const factorial = calculateFactorial(number);
+//     resultElement.textContent = `Factorial of ${number} is ${factorial}.`;
+// });
+
+// function calculateFactorial(n) {
+//     if (n === 0 || n === 1) {
+//         return 1;
+//     }
+//     return n * calculateFactorial(n - 1);
+// }
 
 
 
@@ -248,11 +253,16 @@ function convertKmToMiles() {
 
 
 
-
 function calculateGrade() {
-    const marks = document.getElementById('marks').value;
-    let grade;
+    const marks = parseFloat(document.getElementById("marks").value); // Get the input value and convert it to a number
 
+    if (isNaN(marks)) {
+        document.getElementById('result1').textContent = 'Please enter a valid number!';
+        return;
+    }
+    
+    let grade;
+    
     if (marks >= 90) {
         grade = 'A+';
     } else if (marks >= 80) {
@@ -268,14 +278,39 @@ function calculateGrade() {
     } else {
         grade = 'F';
     }
-
-    document.getElementById('result').innerText = `Your grade is: ${grade}`;
+    document.getElementById('result1').textContent = `Your grade is: ${grade}`;
 }
 
 
+///////////////////////////////temprature///////////////////////////////////////
 
 
+const sub = document.getElementById("convertButton");
+function convert(){
+	let ww;
+	let cfr;
+	let fcr;
+	const input = document.getElementById("temperatureInput");
+	let result = document.getElementById("resultaa");
+	const fc = document.getElementById("fc");
+	const cf = document.getElementById("cf");
+    if(cf.checked){
+        ww = input.value;
+        cfr = ww * (9/5) + 32;
+        result.textContent = `${cfr}°F`;
+    }
+    else if(fc.checked){
+        ww = input.value;
+        fcr = (ww - 32) * 5/9;
+        result.textContent = `${fcr}°C` ;       
+    }
+    else{
+        result.textContent = "select a unit";
+    }
+}
 
+// °F = °C × (9/5) + 32
+//°C = (°F - 32) × 5/9
 
 
 

@@ -155,14 +155,13 @@
             <p id="result">Result: </p>
         </div>
     </div>
-    <div class="container">
-        <h1>Factoryl Calc</h1>
-        <div class="calculator">
-            <input type="number" id="numberfact" placeholder="Enter first number">
-            <button onclick="calculatefact()">Calculate</button>
-            <p id="resultfact">Result: </p>
-        </div>
-    </div>
+    <!-- construction -->
+    <!-- <div style="text-align: center; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+        <h1>Factorial Calculator</h1>
+        <input type="number" id="numberInput" placeholder="Enter a number" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px;" />
+        <button id="calculateButton" style="width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer;">Calculate Factorial</button>
+        <h2 id="result333" style="margin-top: 20px;"></h2>
+    </div> -->
     <div class="container1">
         <h1>Miles/Kilometers Converter</h1>
         <div class="converter">
@@ -185,7 +184,27 @@
         <label for="marks">Enter Marks (0-100):</label>
         <input type="number" id="marks" placeholder="Enter your marks" min="0" max="100">
         <button onclick="calculateGrade()">Calculate Grade</button>
-        <p id="result"></p>
+        <p id="result1"></p>
+    </div>
+    <div class="container1">
+        <h1>Temperature Converter</h1>
+        <div class="temperature-input">
+            <input type="number" id="temperatureInput" class="iii" placeholder="Enter temperature" />
+            <div class="radio-group">
+                <label>
+                    <input type="radio" name="conversion" id="cf">
+                    Celsius to Fahrenheit
+                </label>
+                <label>
+                    <input type="radio" name="conversion" id="fc">
+                    Fahrenheit to Celsius
+                </label>
+            </div>
+            <button id="convertButton" onclick="convert()">Convert</button>
+        </div>
+        <div class="result-display">
+            <span id="resultaa">Result: </span>
+        </div>
     </div>
     <script src="index.js"></script> 
 </body>
