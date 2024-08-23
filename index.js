@@ -297,12 +297,12 @@ function convert(){
     if(cf.checked){
         ww = input.value;
         cfr = ww * (9/5) + 32;
-        result.textContent = `${cfr}°F`;
+        result.textContent = cfr.toFixed(1) + "°C";
     }
     else if(fc.checked){
         ww = input.value;
         fcr = (ww - 32) * 5/9;
-        result.textContent = `${fcr}°C` ;       
+        result.textContent = fcr.toFixed(1) + "°C" ;       
     }
     else{
         result.textContent = "select a unit";
