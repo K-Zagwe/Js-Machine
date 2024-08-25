@@ -312,10 +312,28 @@ function convert(){
 // °F = °C × (9/5) + 32
 //°C = (°F - 32) × 5/9
 
+////////////////////////////////////////////////////
 
 
+function diceroller(){
+    const image = document.getElementById("image");
+    const voo = document.getElementById("diceinput").value;
+    const resuu = document.getElementById("oooo");
+    const randoms = [];
+    const img = [];
+    
+    for(let i = 0;  i < voo; i++ ){
+        let random = Math.floor(Math.random() * 6 + 1);
+        randoms.push(random);
+        img.push(`<img src="${random}.png" width = 50px alt="simon">`)
+        
+    }
 
+    resuu.innerHTML = randoms.join(" , ");
+    resuu.textContent = `dice: ${randoms.join(" , ")}`;
+    image.innerHTML = img.join("       ")
 
+}
 
 
 
