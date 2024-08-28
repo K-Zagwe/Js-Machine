@@ -291,3 +291,21 @@ function calculateGrade() {
 		"resultGrade"
 	).textContent = `Your Grade is: ${grade}`;
 }
+//------------------------------------------------------------
+//----------------------------------------------------------------------
+document.getElementById("convert-btn").onclick = function () {
+	const numberInput = document.getElementById("number-input");
+	const result = document.getElementById("result");
+	if (isNaN(numberInput.value)) {
+	} else {
+		let input = numberInput.value
+		let array = [];
+		while (input > 0) {
+			let q = Math.floor(input / 2)
+			array.push(input % 2)
+			input = q
+		}
+		x = array.reverse().join("");
+		result.textContent = x;
+	}
+}
