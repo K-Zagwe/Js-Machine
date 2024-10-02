@@ -1,242 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS project</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <div class="alld">
-        <div class="allds">
-            <h1 class="BMII">BMI</h1>
-            <div class="section">
-                <label for="">height <span>in meter </span>: </label>
-                <div>
-                    <input type="number" id="hhh">
-                </div>
-            </div>
-            <div class="section">
-                <label for="">weight <span> in kg </span>:</label>
-                <div>
-                    <input type="number" id="kkk">
-                </div>
-            </div>
-            <br>
-            <div class="submm">
-                <button id="sub">SUBMIT</button>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <h2 id="bmi">your bmi is --</h2>
-                <h2 id="bmita"></h2>
-            </div>
-        </div>
-    </div>
-    <div class="alld1">
-        <div class="allds">
-            <h1 class="BMII">Circumference</h1>
-            <div class="section">
-                <label style="margin-bottom: 4px;" for="">radius <span> in meter </span> : </label>
-                <div>
-                    <input type="number" id="radius">
-                </div>
-            </div>
-            
-            <br>
-            <div class="sub">
-                <button id="subm">SUBMIT</button>
-            </div>
-            <h2 id="rad">The Circumference is </h2>
-        </div>
-    </div>
-    <div class="abe">
-        <h1>Number counter</h1>
-        <div class="abed">
-            <div id="o">
-                <h1 id="oo" style="font-size: 10vh;"></h1>
-            </div>
-            <div class="abes">
-                <button id="decrease">decrease</button>
-                <button id="resate">restart</button>
-                <button id="Start">start</button>
-                <button id="increase">increase</button>
-            </div>
-        </div>
-    </div>
-    <div class="abe2">
-        <h1>3 Dice Roller</h1>
-        <div class="abed">
-            <div class="abes">
-                <button id="roll" style=" font-size: xx-large; border-radius: 12px; background-color: #000000;">ROLL</button>
-            </div>
-            <div class="abes">
-                <button style="width: 140px; font-size: 50px;"  id="r1">-</button>
-                <button style="width: 140px; font-size: 50px;"  id="r2">-</button>
-                <button style="width: 140px; font-size: 50px;"  id="r3">-</button>
-            </div>
-        </div>
-    </div>  
-    <div style="background-color: rgb(2, 43, 70); color: #ffff; " class="abe">
-        <h1>payment method</h1>
-        <input id="subscribe" type="checkbox">
-        <label for="subscribe" style="font-size: x-large;">subscribe</label>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Multi-Tool Calculator</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="container">
+			<section id="bmi-calculator">
+				<h2>BMI Calculator</h2>
+				<div class="input-group">
+					<label for="height">Height (m):</label>
+					<input type="number" id="height" step="0.01" />
+				</div>
+				<div class="input-group">
+					<label for="weight">Weight (kg):</label>
+					<input type="number" id="weight" step="0.1" />
+				</div>
+				<button id="calculate-bmi">Calculate BMI</button>
+				<div id="bmi-result"></div>
+			</section>
 
-        <br>
-        <br>
+			<section id="circumference-calculator">
+				<h2>Circumference Calculator</h2>
+				<div class="input-group">
+					<label for="radius">Radius (m):</label>
+					<input type="number" id="radius" step="0.01" />
+				</div>
+				<button id="calculate-circumference">Calculate</button>
+				<div id="circumference-result"></div>
+			</section>
 
-        <input name="pay" value="visa" id="radio" type="radio">
-        <label for="visa" style="font-size: x-large;">visa</label>
+			<section id="number-counter">
+				<h2>Number Counter</h2>
+				<div id="counter-display"></div>
+				<div class="button-group">
+					<button id="decrease">Decrease</button>
+					<button id="reset">Reset</button>
+					<button id="start">Start</button>
+					<button id="increase">Increase</button>
+				</div>
+			</section>
 
-        <br>
+			<section id="dice-roller">
+				<h2>3 Dice Roller</h2>
+				<button id="roll-dice">ROLL</button>
+				<div class="dice-results">
+					<div id="dice1">-</div>
+					<div id="dice2">-</div>
+					<div id="dice3">-</div>
+				</div>
+			</section>
 
-        <input  name="pay" value="Mastercard" id="radio" type="radio">
-        <label for="mc" style="font-size: x-large;">master card</label>
+			<section id="tax-calculator">
+				<h2>Tax Calculator</h2>
+				<div class="input-group">
+					<label for="item1">1st item:</label>
+					<input type="number" id="item1" />
+				</div>
+				<div class="input-group">
+					<label for="item2">2nd item:</label>
+					<input type="number" id="item2" />
+				</div>
+				<div class="input-group">
+					<label for="item3">3rd item:</label>
+					<input type="number" id="item3" />
+				</div>
+				<div class="input-group">
+					<label for="item4">4th item:</label>
+					<input type="number" id="item4" />
+				</div>
+				<div class="input-group">
+					<label for="tax-rate">Tax rate (%):</label>
+					<input type="number" id="tax-rate" />
+				</div>
+				<button id="calculate-tax">Calculate Total</button>
+				<div id="tax-result"></div>
+			</section>
 
-        <br>
+			<section id="simple-calculator">
+				<h2>Simple Calculator</h2>
+				<input id="calc-display" readonly />
+				<div class="calc-buttons">
+					<!-- Calculator buttons will be added here -->
+				</div>
+			</section>
 
-        <input  name="pay" value="paypal" id="radio" type="radio">
-        <label for="paypal" style="font-size: x-large;">paypal</label>
+			<section id="factorial-calculator">
+				<h2>Factorial Calculator</h2>
+				<input
+					type="number"
+					id="factorial-input"
+					placeholder="Enter a number (0-100)"
+					min="0"
+					max="100"
+				/>
+				<button id="calculate-factorial">Calculate</button>
+				<div id="factorial-result"></div>
+			</section>
 
+			<section id="length-converter">
+				<h2>Length Converter</h2>
+				<select id="from-unit">
+					<option value="km">Kilometers</option>
+					<option value="mi">Miles</option>
+					<option value="in">Inches</option>
+					<option value="cm">Centimeters</option>
+					<option value="mm">Millimeters</option>
+				</select>
+				<input type="number" id="convert-input" placeholder="Enter value" />
+				<select id="to-unit">
+					<option value="km">Kilometers</option>
+					<option value="mi">Miles</option>
+					<option value="in">Inches</option>
+					<option value="cm">Centimeters</option>
+					<option value="mm">Millimeters</option>
+				</select>
+				<button id="convert-length">Convert</button>
+				<div id="conversion-result"></div>
+			</section>
 
-        <br>
-        <input  name="pay" value="unionpay" id="radio" type="radio">
-        <label for="paypal" style="font-size: x-large;">unionpay</label>
+			<section id="grade-calculator">
+				<h2>Grade Calculator</h2>
+				<input
+					type="number"
+					id="marks"
+					placeholder="Enter marks (0-100)"
+					min="0"
+					max="100"
+				/>
+				<button id="calculate-grade">Calculate Grade</button>
+				<div id="grade-result"></div>
+			</section>
 
-
-        <br>
-        <input  name="pay" value="bitcoin" id="radio" type="radio">
-        <label for="paypal" style="font-size: x-large;">bitcoin</label>
-
-
-        <br>
-        <br>
-
-        <button style="padding: 10px 50px;" type="submit" id="suuu">submit</button>
-        <br>
-        <h1 id="text">-------------------------</h1>
-        <h2 style="text-align: center; font-size: x-large;" id="textp">---------------------------------------------------</h2>
-    </div>  
-    <div class="alld2">
-        <div class="allds">
-            <h1 class="BMII">Tax</h1>
-            <div class="section">
-                <label for="">1st item </label>
-                <div>
-                    <input type="number" id="i1">
-                </div>
-            </div>
-            <div class="section">
-                <label for="">2nd item </label>
-                <div>
-                    <input type="number" id="i2">
-                </div>
-            </div>
-            <div class="section">
-                <label for="">3rd item </label>
-                <div>
-                    <input type="number" id="i3">
-                </div>
-            </div>
-            <div class="section">
-                <label for="">4th item </label>
-                <div>
-                    <input type="number" id="i4">
-                </div>
-            </div>
-            <h1 >tax <input style="width: 50px;" type="number" id="inptax"> %</h1>
-            <br>
-            <div class="submm">
-                <button id="subtax">SUBMIT</button>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-                <h2 id="bmi">your total is</h2>
-                <h2 id="tata"></h2>
-            </div>
-        </div>
-
-    </div>
-    <div class="container" style="background-color: rgb(158, 5, 38); color: white;">
-        <h1>Simple Calculator</h1>
-        <div class="calculator">
-            <input style="width: 45%;" id="pressholder" readonly>
-            <div class="buttons">
-                <button onclick="addtoinput('0')">0</button>
-                <button onclick="addtoinput('1')">1</button>
-                <button onclick="addtoinput('2')">2</button>
-                <button onclick="addtoinput('+')">+</button>
-                <button onclick="addtoinput('3')">3</button>
-                <button onclick="addtoinput('4')">4</button>
-                <button onclick="addtoinput('5')">5</button>
-                <button onclick="addtoinput('-')">-</button>
-                <button onclick="addtoinput('6')">6</button>
-                <button onclick="addtoinput('7')">7</button>
-                <button onclick="addtoinput('8')">8</button>
-                <button onclick="addtoinput('*')">*</button>
-                <button onclick="addtoinput('9')">9</button>
-                <button onclick="addtoinput('/')">/</button>
-                <button id='clear'>C</button>
-                <button onclick="calc()">=</button>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <h1>Factoryl Calc</h1>
-        <div class="calculator">
-            <input type="number" id="numberfact" placeholder="Enter first number" min='0' max="100">
-            <button onclick="calculatefact()">Calculate</button>
-            <p id="resultfact">Result: </p>
-        </div>
-    </div>
-    <div class="container1">
-        <h1>Length Converter</h1>
-        <div class="converter">
-            <div class="convertcontainer">
-                <select name="measurements" id="measurementsfrom">
-                    <option value="Kilometers">Kilometers</option>
-                    <option value="Miles">Miles</option>
-                    <option value="inch">inch</option>
-                    <option value="cm">cm</option>
-                    <option value="mm">mm</option>
-                </select>
-                <div><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#000000"><path d="M280-160 80-360l200-200 56 57-103 103h287v80H233l103 103-56 57Zm400-240-56-57 103-103H440v-80h287L624-743l56-57 200 200-200 200Z"/></svg>
-                  </div>
-                  <select name="measurements" id="measurementsto">
-                    <option value="Kilometers">Kilometers</option>
-                    <option value="Miles">Miles</option>
-                    <option value="inch">inch</option>
-                    <option value="cm">cm</option>
-                    <option value="mm">mm</option>
-                </select>
-            </div>
-            <input type="number" placeholder="Type here" id="Numberinput">
-            <input type="number" readonly id="Returnvalue">
-        </div>
-        <button onclick="Convert()">Convert</button>
-    </div>
-    <div class="container">
-        <h1>Grade Calculator</h1>
-        <label for="marks">Enter Marks (0-100):</label>
-        <input type="number" id="marks" placeholder="Enter your marks" min="0" max="100">
-        <button onclick="calculateGrade()">Calculate Grade</button>
-        <p id="resultGrade">Your Grade is: </p>
-    </div>
-    <div class="bincontainer">
-        <h1>Decimal to Binary Converter</h1>
-        <div class="input-container">
-          <label for="number-input">Enter a decimal number:</label>
-          <input
-            value=""
-            type="number"
-            name="decimal number input"
-            id="number-input"
-            class="number-input"
-            min="0"
-            
-          />
-          <button class="convert-btn" id="convert-btn">Convert</button>
-        </div>
-        <output id="result" for="number-input"></output>
-    </div>
-    <script src="index.js"></script> 
-</body>
+			<section id="binary-converter">
+				<h2>Decimal to Binary Converter</h2>
+				<input
+					type="number"
+					id="decimal-input"
+					placeholder="Enter a decimal number"
+					min="0"
+				/>
+				<button id="convert-binary">Convert</button>
+				<div id="binary-result"></div>
+			</section>
+		</div>
+		<script src="script.js"></script>
+	</body>
 </html>
